@@ -15,11 +15,7 @@ const PORT = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(cors({
-    origin: ['http://localhost:5713', 'https://rapidassignment.netlify.app/'], // Allow local and deployed frontend
-    methods: ['GET', 'POST', 'OPTIONS'],
-    credentials: true, // If using cookies or authentication
-}));
+app.use(cors());
 
 // MongoDB connection
 mongoose
