@@ -11,7 +11,7 @@ const RenderLayout = ({ download, handlePreview }) => {
             try {
                 const response = await axios.get("https://rapidquestassignment.onrender.com/getLayout");
                 setLayout(response.data); // Set the fetched layout data
-
+                console.log(response)
             } catch (err) {
                 setError("Error fetching layout: " + err.message); // Handle error and display message
             }
@@ -53,7 +53,10 @@ const RenderLayout = ({ download, handlePreview }) => {
                     <div className='text-black text-center'>
                         to see current changes please download first
                     </div>
-                    <div dangerouslySetInnerHTML={{ __html: layout.html }} /> {/* Render the fetched HTML */}
+                    <div className=' flex justify-center'>
+
+                        <div className='p-10' dangerouslySetInnerHTML={{ __html: layout.html }} /> {/* Render the fetched HTML */}
+                    </div>
                 </div>
             ) : (
                 <div>Nothing to show</div> // Message when download is false

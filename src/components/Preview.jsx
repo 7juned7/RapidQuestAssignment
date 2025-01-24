@@ -7,17 +7,17 @@ const Preview = ({ title, textStyle, content, contentStyle, selectedImage }) => 
     // Function to generate the HTML with embedded state
     const generateHTML = () => {
         return `
-          <div id="layout" style="background-color: #64748b; padding: 20px;">
-                <div className="flex justify-center p-5 mb-5">
-                    <div className="${textStyle}">${title}</div>
+          
+                <div class="flex justify-center p-5 mb-5">
+                    <div class="${textStyle}">${title}</div>
                 </div>
-                <div className="flex align-center justify-center m-auto mb-5 p-5 w-[80%]">
-                    <div className="${contentStyle}">${content}</div>
+                <div class="flex align-center justify-center m-auto mb-5 p-5 w-full">
+                    <div class="${contentStyle}">${content}</div>
                 </div>
-                <div className="w-full flex justify-center py-5 min-h-[200px] max-h-[350px]">
-                    ${selectedImage ? `<img src="${selectedImage}" alt="Selected" className="object-contain" />` : '<p>No image selected</p>'}
+                <div class="w-full flex justify-center py-5 min-h-[200px] max-h-[350px]">
+                    ${selectedImage ? `<img src="${selectedImage}" alt="Selected" class="object-contain" />` : '<p>No image selected</p>'}
                 </div>
-            </div>
+            
         `;
     };
 

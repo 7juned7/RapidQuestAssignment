@@ -79,30 +79,43 @@ function App() {
   };
 
 
+
   const handleColor = (color) => {
-    const colorClass = `text-${color}-500`;
+    console.log("Selected color:", color);
+
+    const colorClass = `text-${color}-500`; // Define the new color class
 
     if (type === "Title") {
       setTextStyle((prev) => {
-        // Remove existing color class if any
-        const updatedStyle = prev.split(' ').filter(className => !className.endsWith('-500')).join(' ');
+        // Remove any existing color class (e.g., text-red-500)
+        const updatedStyle = prev
+          .split(' ')
+          .filter((className) => !/^text-(red|green|yellow|pink)-500$/.test(className))
+          .join(' ');
 
         // Add the new color class
-        return `${updatedStyle} ${colorClass}`.trim();
+        const newStyle = `${updatedStyle} ${colorClass}`.trim();
+        console.log("Updated Title Style:", newStyle);
+        return newStyle;
       });
     }
 
     if (type === "Content") {
       setContentStyle((prev) => {
-        // Remove existing color class if any
-        const updatedStyle = prev.split(' ').filter(className => !className.endsWith('-500')).join(' ');
+        // Remove any existing color class (e.g., text-red-500)
+        const updatedStyle = prev
+          .split(' ')
+          .filter((className) => !/^text-(red|green|yellow|pink)-500$/.test(className))
+          .join(' ');
 
         // Add the new color class
-        return `${updatedStyle} ${colorClass}`.trim();
+        const newStyle = `${updatedStyle} ${colorClass}`.trim();
+        console.log("Updated Content Style:", newStyle);
+        return newStyle;
       });
     }
-    console.log(textStyle)
   };
+
 
 
   const handlePreview = () => {

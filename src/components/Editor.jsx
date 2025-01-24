@@ -38,7 +38,7 @@ const Editor = ({ title, content, onHandleChange, handleType, type, contentStyle
             {/* Color Buttons */}
             <div className="flex gap-2 mb-2">
                 {["red", "green", "yellow", "pink"].map((color) => (
-                    <button key={color} onClick={() => handleColor(`${color}`)}>
+                    <button key={color} onClick={() => handleColor(color)}>
                         <div className={`w-[20px] h-[20px] bg-${color}-500`}></div>
                     </button>
                 ))}
@@ -52,7 +52,7 @@ const Editor = ({ title, content, onHandleChange, handleType, type, contentStyle
                     ref={titleRef}
                     value={title}
                     onChange={onHandleChange}
-                    className={`w-full bg-transparent text-black h-20 resize-none focus:outline-none p-2 ${textStyle}`}
+                    className={`w-full bg-transparent h-20 resize-none focus:outline-none p-2 ${textStyle}`}
                     placeholder="Edit Title"
                 />
             ) : type === "Content" ? (
@@ -62,7 +62,7 @@ const Editor = ({ title, content, onHandleChange, handleType, type, contentStyle
                     name="content"
                     value={content}
                     onChange={onHandleChange}
-                    className={`w-full bg-transparent text-black h-20 resize-none focus:outline-none p-2 ${contentStyle}`}
+                    className={`w-full bg-transparent  text-black  h-20 resize-none focus:outline-none p-2 ${contentStyle}`}
                     placeholder="Edit Content"
                 />
             ) : type === "Image" ? (
