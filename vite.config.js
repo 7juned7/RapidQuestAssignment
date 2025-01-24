@@ -8,12 +8,12 @@ export default defineConfig({
     proxy: {
 
       '/getLayout': {
-        target: 'https://rapidquestassignment.onrender.com/',
+        target: 'https://rapidquestassignment.onrender.com',
         changeOrigin: true,
         secure: false,
       },
       '/save-layout': {
-        target: "https://rapidquestassignment.onrender.com/",
+        target: "https://rapidquestassignment.onrender.com",
         changeOrigin: true,
         secure: false,
       }
