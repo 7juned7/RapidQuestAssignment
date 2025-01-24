@@ -31,11 +31,13 @@ const Preview = ({ title, textStyle, content, contentStyle, selectedImage }) => 
 
             // Log success response
             console.log("Success:", response.data);
+            alert("layout sended to backend to see the preview click on Preview")
         } catch (error) {
             // Log error details
+            alert("error in sending layout to backend")
+
             console.error("Error sending layout to backend:", error.response?.data || error.message);
         }
-        alert("layout sended to backend to see the preview click on Preview")
     };
 
 

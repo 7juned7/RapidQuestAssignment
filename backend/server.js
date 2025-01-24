@@ -84,7 +84,7 @@ app.get('/getLayout', async (req, res) => {
 
 
 app.get("/", (req, res) => {
-    res.send(layout)
+    res.send("hello")
 })
 // Start the server
 app.listen(5000, console.log(`Server Started on PORT ${PORT}`));
