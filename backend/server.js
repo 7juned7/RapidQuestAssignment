@@ -74,7 +74,7 @@ app.get('/getLayout', async (req, res) => {
     try {
         const layout = await Layout.findOne().sort({ createdAt: -1 });
         res.status(200).json(layout);
-
+        console.log(layout)
     } catch (error) {
         console.error('Error fetching email templates:', error);
         res.status(500).send({ error: 'Error fetching email templates' });
@@ -84,7 +84,7 @@ app.get('/getLayout', async (req, res) => {
 
 
 app.get("/", (req, res) => {
-    res.send("hello")
+    res.send(layout)
 })
 // Start the server
 app.listen(5000, console.log(`Server Started on PORT ${PORT}`));
