@@ -80,7 +80,15 @@ app.get('/getLayout', async (req, res) => {
         res.status(500).send({ error: 'Error fetching email templates' });
     }
 });
+app.get('/check-db', (req, res) => {
+    mongoose.connection.on('connected', () => {
+        res.status(200).json({ message: 'MongoDB is connected' });
+    });
 
+    mongoose.connection.on('error', (err) => {
+        res.status(500).json({ message: 'MongoDB connection failed', error: err });
+    });
+});
 
 
 app.get("/", (req, res) => {
