@@ -1,7 +1,0 @@
-[build]
-  functions = "api"  # Look for serverless functions inside /backend/api
-
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"  # Map API routes to the serverless functions
-  status = 200
