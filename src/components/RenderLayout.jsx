@@ -9,7 +9,7 @@ const RenderLayout = ({ download, handlePreview }) => {
     useEffect(() => {
         const fetchLayout = async () => {
             try {
-                const response = await axios.get("https://rapidquestassignment.onrender.com//getLayout");
+                const response = await axios.get("https://rapidquestassignment.onrender.com/getLayout");
                 setLayout(response.data); // Set the fetched layout data
 
             } catch (err) {
