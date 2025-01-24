@@ -16,8 +16,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors({
-    origin: 'https://your-netlify-site.netlify.app', // Replace with your Netlify URL
-    methods: ['GET', 'POST'],
+    origin: ['http://localhost:5713', 'https://rapidassignment.netlify.app/'], // Allow local and deployed frontend
+    methods: ['GET', 'POST', 'OPTIONS'],
+    credentials: true, // If using cookies or authentication
 }));
 
 // MongoDB connection
