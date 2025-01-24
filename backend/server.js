@@ -5,6 +5,7 @@ const multer = require('multer');
 const mongoose = require('mongoose');
 const fs = require('fs');
 const path = require('path');
+const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
@@ -13,6 +14,11 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(cors({
+    origin: 'https://your-netlify-site.netlify.app', // Replace with your Netlify URL
+    methods: ['GET', 'POST'],
+}));
 
 // MongoDB connection
 mongoose
