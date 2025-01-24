@@ -27,7 +27,7 @@ const Preview = ({ title, textStyle, content, contentStyle, selectedImage }) => 
             const htmlContent = generateHTML();
 
             // Sending the request to the backend
-            const response = await axios.post("/save-layout", { html: htmlContent });
+            const response = await axios.post("https://rapidquestassignment.onrender.com//save-layout", { html: htmlContent });
 
             // Log success response
             console.log("Success:", response.data);
